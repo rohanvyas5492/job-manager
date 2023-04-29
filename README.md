@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+#### Run The App Locally
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npm run install && npm start
 
-## Available Scripts
+#### React Router 6
 
-In the project directory, you can run:
+npm install react-router-dom@6
 
-### `yarn start`
+#### React Toastify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm install --save react-toastify
+import 'react-toastify/dist/ReactToastify.css'
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Redux Toolkit
 
-### `yarn test`
+npm install @reduxjs/toolkit react-redux
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### React Bootstrap
 
-### `yarn build`
+npm install react-bootstrap bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Axios HTTP Methods
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- GET - get resources from the server
+- POST - submit resource to the server
+- PUT/PATCH - modify resource on the server
+- DELETE - delete resource form the server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// GET
+axios.get(url, options);
+// POST
+axios.post(url, resource, options);
+// PATCH
+axios.patch(url, resource, options);
+// DELETE
+axios.delete(url, options);
 
-### `yarn eject`
+npm install axios
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Documentation - https://node-course-jobs-api.onrender.com/api-docs/
+- https://jobify-prod.herokuapp.com/api/v1/toolkit
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###### Register USER
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- https://jobify-prod.herokuapp.com/api/v1/toolkit/auth/register
 
-## Learn More
+- POST /auth/register
+- {name:'john',email:'john@gmail.com',password:'secret'}
+- sends back the user object with token
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###### Register USER - TESTING()
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- POST /auth/testingRegister
+- {name:'john',email:'john@gmail.com',password:'secret'}
+- sends back the user object with token
 
-### Code Splitting
+###### Login USER
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- POST /auth/login
+- {email:'john@gmail.com',password:'secret'}
+- sends back the user object with token
 
-### Analyzing the Bundle Size
+#### Login credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+email : rv007@gmail.com
+password : 123456
 
-### Making a Progressive Web App
+#### React Icons
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[React Icons](https://react-icons.github.io/react-icons/)
+npm install react-icons
 
-### Advanced Configuration
+###### Update USER
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- PATCH /auth/updateUser
+- { email:'john@gmail.com', name:'john', lastName:'smith', location:'my location' }
+- authorization header : 'Bearer token'
+- sends back the user object with token
 
-### Deployment
+#### Create Job Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- POST /jobs
+- { position:'position', company:'company', jobLocation:'location', jobType:'full-time', status:'pending' }
+- authorization header : 'Bearer token'
+- sends back the job object
 
-### `yarn build` fails to minify
+#### GetAllJobs Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GET /jobs
+- authorization header : 'Bearer token'
+- returns {jobs:[],totalJobs:number, numOfPages:number }
+
+#### Moment.js
+
+[moment.js](https://momentjs.com/)
+npm install moment
+
+#### Delete Job Request
+
+- DELETE /jobs/jobId
+- authorization header : 'Bearer token'
+
+#### Test User
+
+- email : testUser@test.com
+- password : secret
+- read only!
+- dummy data
+
+#### Recharts Library
+
+[Recharts](https://recharts.org)
+
+npm install recharts
+
+#### react-sticky-el
+
+npm install react-sticky-el
